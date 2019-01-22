@@ -1,9 +1,9 @@
-webpackHotUpdate("static/development/pages/index.js",{
+webpackHotUpdate("static/development/pages/post.js",{
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/post.js":
+/*!***********************!*\
+  !*** ./pages/post.js ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13,13 +13,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.jsx");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Image */ "./components/Image.jsx");
+/* harmony import */ var _components_Video__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Video */ "./components/Video.jsx");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
+
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -50,82 +51,96 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Index =
+
+var Post =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Index, _Component);
+  _inherits(Post, _Component);
 
-  function Index(props) {
+  function Post(props) {
     var _this;
 
-    _classCallCheck(this, Index);
+    _classCallCheck(this, Post);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Post).call(this, props));
     _this.state = {
-      articles: props.articles
+      article: props.article
     };
     return _this;
   }
 
-  _createClass(Index, [{
+  _createClass(Post, [{
     key: "render",
     value: function render() {
-      var i = 1;
-      this.state.articles.map(function (obj) {
-        obj.id = i++;
-      });
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_5___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
         charset: "utf-8"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         rel: "stylesheet",
-        href: "/static/index.css"
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Articles"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.state.articles.map(function (obj) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-          key: obj.id
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          as: "/article/".concat(obj.id),
-          href: "/post?id=".concat(obj.id)
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", null, " ", obj.title, " ")));
-      }))));
+        href: "/static/post.css"
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+        className: "main"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " ", this.state.article.title, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        key: this.state.article.url,
+        images: this.state.article.images
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "content-container"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Video__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        key: this.state.article.video.url,
+        video: this.state.article.video
+      }), this.state.article.content.map(function (text) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, text.subtitle), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, text.text));
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null))))));
     }
   }]);
 
-  return Index;
+  return Post;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
-Index.getInitialProps =
+Post.getInitialProps =
 /*#__PURE__*/
-_asyncToGenerator(
-/*#__PURE__*/
-_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  var res, data;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()("https://interview-project-17987.herokuapp.com/api/article");
+function () {
+  var _ref = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(context) {
+    var id, res, article;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            id = context.query.id;
+            _context.next = 3;
+            return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()("https://interview-project-17987.herokuapp.com/api/article/article-".concat(id));
 
-        case 2:
-          res = _context.sent;
-          _context.next = 5;
-          return res.json();
+          case 3:
+            res = _context.sent;
+            _context.next = 6;
+            return res.json();
 
-        case 5:
-          data = _context.sent;
-          console.log("Article data fetched. Count: ".concat(data.length));
-          return _context.abrupt("return", {
-            articles: data
-          });
+          case 6:
+            article = _context.sent;
+            console.log("Fetched article: ".concat(article.url));
+            return _context.abrupt("return", {
+              article: article
+            });
 
-        case 8:
-        case "end":
-          return _context.stop();
+          case 9:
+          case "end":
+            return _context.stop();
+        }
       }
-    }
-  }, _callee, this);
-}));
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+    }, _callee, this);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Post);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -142,11 +157,11 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/post")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.5414fba59676abb0ceba.hot-update.js.map
+//# sourceMappingURL=post.js.bdce213c5b7f6023cdbb.hot-update.js.map

@@ -1,6 +1,6 @@
 /* Video */
 .video-container {
-    height: 200px;
+    height: 215px;
     width: 210px;
     background-color: white;
     box-sizing: border-box;
@@ -12,6 +12,7 @@
 .video-img {
     height: 118px !important;
     width: 210px !important;
+    margin-top: 35px;
 }
 
 /* Video */

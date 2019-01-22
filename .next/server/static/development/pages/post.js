@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -222,7 +222,8 @@ function (_Component) {
       imageInfo: _this.props.images,
       mainImage: _this.props.images[0].mainUrl,
       imageTitle: _this.props.images[0].title,
-      imageDescription: _this.props.images[0].description
+      imageDescription: _this.props.images[0].description,
+      blackBorder: false
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleImageClick", function (newUrl, newTitle, newDescr) {
@@ -244,9 +245,6 @@ function (_Component) {
       var blackBorder = {
         border: "3px solid border"
       };
-      var noBorder = {
-        border: "none"
-      };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -258,11 +256,17 @@ function (_Component) {
         className: "t-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "description"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.state.imageTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.state.imageDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.state.imageTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        style: {
+          color: "#A9A9A9"
+        }
+      }, this.state.imageDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb-contain"
       }, this.state.imageInfo.map(function (thumbnails) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          key: thumbnails.thumbnailUrl,
           align: "right",
+          style: blackBorder,
           className: "thumbnail",
           alt: thumbnails.description,
           src: "http://".concat(thumbnails.thumbnailUrl),
@@ -453,20 +457,17 @@ function (_Component) {
         className: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
         className: "main"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-        style: {
-          paddingBottom: 8
-        }
-      }, " ", this.state.article.title, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " ", this.state.article.title, " "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
         key: this.state.article.url,
         images: this.state.article.images
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "content-container"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Video__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        key: this.state.article.video.url,
         video: this.state.article.video
       }), this.state.article.content.map(function (text) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, text.subtitle), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, text.text));
-      }))))));
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, text.subtitle), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, text.text));
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null))))));
     }
   }]);
 
@@ -517,7 +518,7 @@ function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/post.js ***!
   \*****************************/

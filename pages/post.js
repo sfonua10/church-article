@@ -24,7 +24,7 @@ class Post extends Component {
           <Header />
           <div className="wrapper">
             <section className="main">
-              <h1 style={{ paddingBottom: 8 }}> {this.state.article.title} </h1>
+              <h1> {this.state.article.title} </h1>
               <Image
                 key={this.state.article.url}
                 images={this.state.article.images}
@@ -32,13 +32,18 @@ class Post extends Component {
 
               <br />
               <div className="content-container">
-                <Video video={this.state.article.video} />
+                <Video
+                  key={this.state.article.video.url}
+                  video={this.state.article.video}
+                />
                 {this.state.article.content.map(text => (
                   <React.Fragment>
                     <h4>{text.subtitle}</h4>
+                    <br />
                     <p>{text.text}</p>
                   </React.Fragment>
                 ))}
+                <br />
               </div>
             </section>
           </div>

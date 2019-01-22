@@ -6,7 +6,8 @@ class Image extends Component {
     imageInfo: this.props.images,
     mainImage: this.props.images[0].mainUrl,
     imageTitle: this.props.images[0].title,
-    imageDescription: this.props.images[0].description
+    imageDescription: this.props.images[0].description,
+    blackBorder: false
   };
 
   handleImageClick = (newUrl, newTitle, newDescr) => {
@@ -21,9 +22,6 @@ class Image extends Component {
     let blackBorder = {
       border: "3px solid border"
     };
-    let noBorder = {
-      border: "none"
-    };
 
     return (
       <React.Fragment>
@@ -35,12 +33,14 @@ class Image extends Component {
         <div className="t-container">
           <div className="description">
             <h2>{this.state.imageTitle}</h2>
-            <h3>{this.state.imageDescription}</h3>
+            <h3 style={{ color: "#A9A9A9" }}>{this.state.imageDescription}</h3>
           </div>
           <div className="thumb-contain">
             {this.state.imageInfo.map(thumbnails => (
               <img
+                key={thumbnails.thumbnailUrl}
                 align="right"
+                style={blackBorder}
                 className="thumbnail"
                 alt={thumbnails.description}
                 src={`http://${thumbnails.thumbnailUrl}`}
